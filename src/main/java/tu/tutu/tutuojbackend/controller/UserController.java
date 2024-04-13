@@ -9,8 +9,8 @@ import tu.tutu.tutuojbackend.common.BaseResponse;
 import tu.tutu.tutuojbackend.common.ErrorCode;
 import tu.tutu.tutuojbackend.exception.CommonException;
 import tu.tutu.tutuojbackend.model.domain.User;
-import tu.tutu.tutuojbackend.model.request.UserLoginRequest;
-import tu.tutu.tutuojbackend.model.request.UserRegisterRequest;
+import tu.tutu.tutuojbackend.model.request.user.UserLoginRequest;
+import tu.tutu.tutuojbackend.model.request.user.UserRegisterRequest;
 import tu.tutu.tutuojbackend.service.UserService;
 
 import javax.annotation.Resource;

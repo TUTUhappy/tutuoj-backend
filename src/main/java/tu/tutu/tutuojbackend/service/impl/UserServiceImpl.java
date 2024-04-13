@@ -1,6 +1,5 @@
 package tu.tutu.tutuojbackend.service.impl;
 
-import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,12 +7,11 @@ import cn.hutool.crypto.digest.DigestUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.lang3.StringUtils;
-import sun.misc.MessageUtils;
 import tu.tutu.tutuojbackend.common.ErrorCode;
 import tu.tutu.tutuojbackend.exception.CommonException;
 import tu.tutu.tutuojbackend.model.domain.User;
-import tu.tutu.tutuojbackend.model.request.UserLoginRequest;
-import tu.tutu.tutuojbackend.model.request.UserRegisterRequest;
+import tu.tutu.tutuojbackend.model.request.user.UserLoginRequest;
+import tu.tutu.tutuojbackend.model.request.user.UserRegisterRequest;
 import tu.tutu.tutuojbackend.service.UserService;
 import tu.tutu.tutuojbackend.mapper.UserMapper;
 import org.springframework.stereotype.Service;

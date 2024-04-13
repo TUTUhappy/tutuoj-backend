@@ -1,4 +1,4 @@
-package tu.tutu.tutuojbackend.model.request;
+package tu.tutu.tutuojbackend.model.request.user;
 
 
 import lombok.Data;

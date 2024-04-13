@@ -2,10 +2,9 @@ package tu.tutu.tutuojbackend.service;
 
 import tu.tutu.tutuojbackend.model.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
-import tu.tutu.tutuojbackend.model.request.UserLoginRequest;
-import tu.tutu.tutuojbackend.model.request.UserRegisterRequest;
+import tu.tutu.tutuojbackend.model.request.user.UserLoginRequest;
+import tu.tutu.tutuojbackend.model.request.user.UserRegisterRequest;
 
-import javax.jws.soap.SOAPBinding;
 import javax.servlet.http.HttpServletRequest;
 
 /**

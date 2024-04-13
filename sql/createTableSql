@@ -1,0 +1,59 @@
+-- auto-generated definition
+create table user
+(
+    id            bigint auto_increment comment 'id'
+        primary key,
+    user_name     varchar(256)                           null comment '昵称',
+    user_account  varchar(256)                           null comment '账号',
+    avatar_url    varchar(1024)                          null comment '头像',
+    gender        tinyint                                null comment '性别',
+    user_password varchar(256)                           not null comment '密码',
+    email         varchar(256)                           null comment '邮箱',
+    user_role     varchar(512) default 'user'            not null comment '用户身份',
+    create_time   datetime     default CURRENT_TIMESTAMP not null comment '创建时间',
+    update_time   datetime     default CURRENT_TIMESTAMP not null comment '修改时间',
+    is_delete     tinyint      default 0                 not null comment '是否删除(0- 未删除，1-已删除)'
+)
+    comment '用户表';
+create table question
+(
+    id              bigint auto_increment comment 'id'
+        primary key,
+    title           varchar(256)                       null comment '标题',
+    tags            varchar(1024)                      null comment '题目标签',
+    description     text                               null comment '题目描述',
+    answer          text                               null comment '答案',
+    question_case   text                               null comment '题目输入用例和输出用例',
+    question_config text                               null comment '题目限制',
+    submit_num      bigint   default 0                 null comment '提交数',
+    accept_num      bigint   default 0                 null comment '通过数',
+    user_id         bigint                             not null comment '创建人',
+    create_time     datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    update_time     datetime default CURRENT_TIMESTAMP not null comment '修改时间',
+    is_delete       tinyint  default 0                 not null comment '是否删除(0- 未删除，1-已删除)'
+)
+    comment '题目表';
+
+create index index_idx_userId
+    on question (user_id);
+create table submit_question
+(
+    id            bigint auto_increment comment 'id'
+        primary key,
+    question_id   bigint                             null comment '题目Id',
+    user_id       bigint                             null comment '提交人id',
+    language      varchar(256)                       null comment '语言',
+    answer        text                               null comment '答案',
+    status        int      default 0                 null comment '0-待判题，1-正在判题，2-成功，3-失败',
+    answer_result text                               null comment '答案消耗时间空间以及返回结果',
+    create_time   datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    update_time   datetime default CURRENT_TIMESTAMP not null comment '修改时间',
+    is_delete     tinyint  default 0                 not null comment '是否删除(0- 未删除，1-已删除)'
+)
+    comment '题目提交表';
+
+create index index_idx_questionId
+    on submit_question (question_id);
+
+create index index_idx_userId
+    on submit_question (user_id);
